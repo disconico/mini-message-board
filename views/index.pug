@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= 'Message Board'
+
+  a(href="/new") Post a message 
+
+
+  each msg in messages 
+    div(class='container')
+      div(class='flex')
+        div(class='title')
+        h3= msg.text
+        div(class='message')
+          p= msg.user
+          p= msg.added.toLocaleDateString()
